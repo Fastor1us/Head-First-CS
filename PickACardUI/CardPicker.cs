@@ -10,6 +10,11 @@ namespace PickACardUI
     {
         static Random random = new Random();
 
+        /// <summary>
+        /// Выбирает несколько карт и возвращает их
+        /// </summary>
+        /// <param name="numberOfCards">Количество выбираемых карт.</param>
+        /// <returns>Массив строк с названиями карт.</returns>
         public static string[] PickSomeCards(int numberOfCards)
         {
             string[] pickedCards = new string[numberOfCards];
