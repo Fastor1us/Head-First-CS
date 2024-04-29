@@ -11,14 +11,8 @@
 
         public Player(int cash)
         {
-            if (cash > 0)
-            {
-                Cash = cash;
-            }
-            else
-            {
-                Cash = 100;
-            }
+            if (cash > 0) Cash = cash;
+            else Cash = 100;
         }
 
         public int GetCashInfo() { return Cash; }
@@ -30,18 +24,12 @@
 
         public void RemoveCash(int amount)
         {
-            if (amount > 0 && amount <= Cash)
-            {
-                Cash -= amount;
-            }
+            if (amount > 0 && amount <= Cash) Cash -= amount;
         }
 
         public void AddCash(int amount)
         {
-            if (amount > 0)
-            {
-                Cash += amount;
-            }
+            if (amount > 0) Cash += amount;
         }
     }
 }
