@@ -1,25 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace SwordDamageUI
+namespace WeaponDamageUI
 {
-    internal class SwordDamage
+    internal class WeaponDamage
     {
         public int BaseDamage { get; private set; }
         public int FlameDamage { get; private set; }
+        public int Dices { get; private set; }
         public int Roll { get; private set; }
         public float MagicMultiplier { get; private set; }
-        private static Random random = new Random();
+        private static readonly Random random = new Random();
 
-        public SwordDamage(int baseDamage, int flameDamage, float magicMultiplier)
+        public WeaponDamage(int baseDamage, int flameDamage, float magicMultiplier, int dices)
         {
             BaseDamage = baseDamage;
             FlameDamage = flameDamage;
             MagicMultiplier = magicMultiplier;
+            Dices = dices;
         }
-        
-        public int CalculateDamage(bool isMagic = false, bool isFlaming = false)
+
+        public int CalculateDamage(bool isMagic, bool isFlaming)
         {
-            for (byte i = 0; i < 3; i++) Roll += random.Next(1, 7);
+            for (byte i = 0; i < Dices; i++) Roll += random.Next(1, 7);
             float magicMultiplier = isMagic ? MagicMultiplier : 1;
             int flameDamage = isFlaming ? FlameDamage : 1;
             return (int)(Roll * magicMultiplier) + flameDamage + BaseDamage;

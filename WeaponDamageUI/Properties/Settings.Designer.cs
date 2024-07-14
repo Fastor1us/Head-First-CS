@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SwordDamageUI.Properties
+namespace WeaponDamageUI.Properties
 {
 
 
