@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BeehiveManagerUI
 {
-    abstract class Bee
+    abstract class Bee : IWorker
     {
         public string Job { get; }
         public abstract float CostPerShift { get; }

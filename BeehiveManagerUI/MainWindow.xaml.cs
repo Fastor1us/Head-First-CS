@@ -26,21 +26,18 @@ namespace BeehiveManagerUI
         public MainWindow()
         {
             InitializeComponent();
-            queen = new Queen();
-            statusReport.Text = queen.StatusReport;
+            queen = Resources["queen"] as Queen;
         }
 
         private void AssignJob_Click(object sender, RoutedEventArgs e)
         {
             queen.AssignBee(jobSelector.Text);
-            statusReport.Text = queen.StatusReport;
             assignJobButton.IsEnabled = queen.UnassignedWorkers > 1;
         }
 
         private void WorkShift_Click(object sender, RoutedEventArgs e)
         {
             queen.WorkTheNextShift();
-            statusReport.Text = queen.StatusReport;
             assignJobButton.IsEnabled = queen.UnassignedWorkers > 1;
             workTheNextShiftButton.IsEnabled =
                 queen.CostPerShift < HoneyVault.Honey;

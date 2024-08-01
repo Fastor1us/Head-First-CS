@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,14 +9,21 @@ using System.Windows;
 
 namespace BeehiveManagerUI
 {
-    internal class Queen : Bee
+    internal class Queen : Bee, INotifyPropertyChanged
     {
         public override float CostPerShift { get; } = 2.15F;
-        private readonly List<Bee> workers = new List<Bee>();
+        private readonly List<IWorker> workers = new List<IWorker>();
         private float eggs = 0;
         public float UnassignedWorkers { get; private set; } = 4;
         const float EGGS_PER_SHIFT = 0.45F;
         const float HONEY_PER_UNASSIGNED_WORKER = 0.5F;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
 
         public Queen() : base("Queen")
         {
@@ -27,16 +35,17 @@ namespace BeehiveManagerUI
         protected override void DoJob()
         {
             eggs += EGGS_PER_SHIFT;
-            foreach (var worker in workers)
+            foreach (IWorker worker in workers)
             {   
                 worker.WorkTheNextShift();
             }
             HoneyVault.ConsumeHoney(
                 HONEY_PER_UNASSIGNED_WORKER * (int)UnassignedWorkers
             );
+            OnPropertyChanged("StatusReport");
         }
 
-        private void AddWorker(Bee bee)
+        private void AddWorker(IWorker bee)
         {
             if (UnassignedWorkers >= 1)
             {
@@ -59,6 +68,7 @@ namespace BeehiveManagerUI
                     AddWorker(new EggCare(this));
                     break;
             }
+            OnPropertyChanged("StatusReport");
         }
 
         public void CareForEggs(float eggsToConvert)
