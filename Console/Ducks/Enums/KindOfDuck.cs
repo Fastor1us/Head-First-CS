@@ -2,7 +2,7 @@ namespace Ducks;
 
 enum KindOfDuck
 {
-  Mallard,
-  Muscovy,
-  Loon
+    Mallard,
+    Muscovy,
+    Loon
 }

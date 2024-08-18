@@ -1,4 +1,6 @@
-﻿namespace ShoeCloset;
+﻿using SC = ShoeCloset.Classes.ShoeCloset;
+
+namespace ShoeCloset;
 
 internal class Program
 {
@@ -6,35 +8,39 @@ internal class Program
     {
         while (true)
         {
-            if (Classes.ShoeCloset.ShoeCount == 0)
+            if (SC.ShoeCount == 0)
             {
                 Console.WriteLine("The shoe closet is empty.\n");
-                Classes.ShoeCloset.Add();
+                SC.Add();
             }
             else
             {
-                Classes.ShoeCloset.PrintShoes();
+                SC.PrintShoes();
                 Console.WriteLine();
 
                 bool isChosen = false;
                 do
                 {
-                    Console.Write("Press 'a' to add or 'r' to remove a shoe:");
-                    ConsoleKeyInfo key = Console.ReadKey();
+                    Console.Write("Press 'a' to add, 'r' to remove");
+                    Console.Write(" a shoe and 'q' to quit:\n");
+                    ConsoleKeyInfo key = Console.ReadKey(true);
                     Console.WriteLine();
-                    if (key.Key == ConsoleKey.A)
+                    switch (key.Key)
                     {
-                        Classes.ShoeCloset.Add();
-                        isChosen = true;
-                    }
-                    else if (key.Key == ConsoleKey.R)
-                    {
-                        Classes.ShoeCloset.Remove();
-                        isChosen = true;
-                    }
-                    else
-                    {
-                        Console.WriteLine(Constants.WRONG_INPUT);
+                        case ConsoleKey.A:
+                            SC.Add();
+                            isChosen = true;
+                            break;
+                        case ConsoleKey.R:
+                            SC.Remove();
+                            isChosen = true;
+                            break;
+                        case ConsoleKey.Q:
+                            Console.WriteLine("Goodbye!");
+                            return;
+                        default:
+                            Console.WriteLine(Constants.WRONG_INPUT);
+                            break;
                     }
                 } while (!isChosen);
                 Console.WriteLine();

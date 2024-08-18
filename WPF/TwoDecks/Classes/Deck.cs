@@ -26,23 +26,14 @@ namespace TwoDecks
                     Cards.Add(new Card((Values)value, (Suits)suit));
         }
 
-        public void Add(Card card)
-        {
-            Cards.Add(card);
-        }
-        public void Add(Values value, Suits suit)
-        {
-            Cards.Add(new Card(value, suit));
-        }
+        public void Add(Card card) => Cards.Add(card);
 
-        public void Remove(int index)
-        {
-            Cards.RemoveAt(index);
-        }
-        public void Remove(Card card)
-        {
-            Remove(card.Value, card.Suit);
-        }
+        public void Add(Values value, Suits suit) => Cards.Add(new Card(value, suit));
+
+        public void Remove(int index) => Cards.RemoveAt(index);
+
+        public void Remove(Card card) => Remove(card.Value, card.Suit);
+
         public void Remove(Values value, Suits suit)
         {
             var cardsToRemove = Cards.Where(x => x.Value == value && x.Suit == suit).ToList();
@@ -91,10 +82,7 @@ namespace TwoDecks
             for (int i = 0; i < Cards.Count; i++) Console.WriteLine(Cards[i]);
         }
 
-        public void Clear()
-        {
-            Cards.Clear();
-        }
+        public void Clear() => Cards.Clear();
 
         public void Reset()
         {

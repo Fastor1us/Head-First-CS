@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JimmyLinq", "JimmyLinq\JimmyLinq.csproj", "{FE04B96C-5202-4204-9F3C-397C0B0FCEE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JimmyLinqUnitTests", "JimmyLinqUnitTests\JimmyLinqUnitTests.csproj", "{A71CB13A-BC00-43A2-9C35-8F2D1EC5C145}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FE04B96C-5202-4204-9F3C-397C0B0FCEE0} = {FE04B96C-5202-4204-9F3C-397C0B0FCEE0}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE04B96C-5202-4204-9F3C-397C0B0FCEE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE04B96C-5202-4204-9F3C-397C0B0FCEE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE04B96C-5202-4204-9F3C-397C0B0FCEE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE04B96C-5202-4204-9F3C-397C0B0FCEE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A71CB13A-BC00-43A2-9C35-8F2D1EC5C145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A71CB13A-BC00-43A2-9C35-8F2D1EC5C145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A71CB13A-BC00-43A2-9C35-8F2D1EC5C145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A71CB13A-BC00-43A2-9C35-8F2D1EC5C145}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99B95D32-E8CD-4C66-8EFB-C1B3EABAB405}
+	EndGlobalSection
+EndGlobal

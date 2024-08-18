@@ -1,4 +1,6 @@
-﻿namespace ShoeCloset.Classes;
+﻿using ShoeCloset.Enums;
+
+namespace ShoeCloset.Classes;
 
 internal static class ShoeCloset
 {
@@ -9,10 +11,10 @@ internal static class ShoeCloset
     {
         Console.WriteLine("Adding a shoe...");
 
-        Enums.Shoes shoe = ChooseFromEnum<Enums.Shoes>("Enter a style: ");
-        Enums.Colors color = ChooseFromEnum<Enums.Colors>("Enter the color: ");
+        Shoes shoe = ChooseFromEnum<Shoes>("Enter a style: ");
+        Colors color = ChooseFromEnum<Colors>("Enter the color: ");
 
-        shoes.Add(new Classes.Shoe(shoe, color));
+        shoes.Add(new Shoe(shoe, color));
         Console.WriteLine();
     }
 
