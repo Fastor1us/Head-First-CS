@@ -1,14 +1,9 @@
-﻿namespace TwoDecks
+﻿namespace TwoDecks;
+
+class Card(Values value, Suits suit)
 {
-    class Card
-    {
-        public Values Value { get; }
-        public Suits Suit { get; }
-        public Card(Values value, Suits suit)
-        {
-            Value = value;
-            Suit = suit;
-        }
-        public override string ToString() { return $"{Value} of {Suit}"; }
-    }
+    public Values Value { get; } = value;
+    public Suits Suit { get; } = suit;
+
+    public override string ToString() => $"{Value} of {Suit}";
 }

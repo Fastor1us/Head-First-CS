@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace BeehiveManager;
 
-namespace BeehiveManager
+internal interface IWorker
 {
-    internal interface IWorker
-    {
-        string Job { get; }
-        void WorkTheNextShift();
-    }
+    string Job { get; }
+    void WorkTheNextShift();
 }

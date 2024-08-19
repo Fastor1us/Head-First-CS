@@ -1,10 +1,9 @@
-﻿namespace TwoDecks
+﻿namespace TwoDecks;
+
+enum Suits
 {
-    enum Suits
-    {
-        Diamonds,
-        Clubs,
-        Hearts,
-        Spades,
-    }
+    Diamonds,
+    Clubs,
+    Hearts,
+    Spades,
 }

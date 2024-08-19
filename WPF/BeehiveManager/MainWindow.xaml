@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BeehiveManager"
         mc:Ignorable="d"
-        Title = "Beehive Management System" Height="325" Width="625">
+        Title="Beehive Management System" Height="325" Width="625" ResizeMode="NoResize">
     <Window.Resources>
         <local:Queen x:Key="queen"/>
     </Window.Resources>
@@ -30,12 +30,11 @@
             <Button x:Name="assignJobButton" Content="Assign this job to a bee" 
                     FontSize="18px" Click="AssignJob_Click" />
         </StackPanel>
-        <Button x:Name="workTheNextShiftButton"  Grid.Row="2" Content="Work the next shift"
-                FontSize="18px" Margin="20" Click="WorkShift_Click"/> 
-        <Label Content="Queen's Report" Grid.Column="1" FontSize="18" Margin="20,0"
-            VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <Button x:Name="workTheNextShiftButton"  Grid.Row="2" Content="Work the next shift" 
+                FontSize="18px" Margin="20" Click="WorkShift_Click"/>
+        <Label Content="Queen's Report" Grid.Column="1" FontSize="18" Margin="20,0" 
+               VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
         <TextBox  x:Name="statusReport" IsReadOnly="True" Grid.Row="1" Grid.RowSpan="2" 
             Grid.Column="1" Margin="10 20 10 20" Text="{Binding StatusReport, Mode=OneWay}" />
     </Grid>
 </Window>
- 
