@@ -43,6 +43,7 @@ public class ComicAnalyzerTests
             new Review() { Issue = 2, Critic = Critics.MuddyCritic, Score = 40.3},
             new Review() { Issue = 2, Critic = Critics.MuddyCritic, Score = 40.3},
         };
+
         var expectedResults = new[]
         {
             "MuddyCritic rated #1 'Issue 1' -12,12",
@@ -53,7 +54,9 @@ public class ComicAnalyzerTests
             "MuddyCritic rated #2 'Issue 2' 40,30",
             "MuddyCritic rated #2 'Issue 2' 40,30",
         };
+
         var actualResults = ComicAnalyzer.GetReviews(testComics, testReviews).ToList();
+
         CollectionAssert.AreEqual(expectedResults, actualResults);
     }
 }

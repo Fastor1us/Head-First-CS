@@ -4,6 +4,7 @@ public class Comic
 {
     public string? Name { get; set; }
     public int Issue { get; set; }
+
     public static readonly IEnumerable<Review> Reviews = [
         new Review() { Issue = 36, Critic = Enums.Critics.MuddyCritic, Score = 37.6 },
         new Review() { Issue = 74, Critic = Enums.Critics.RottenTornadoes, Score = 22.8 },
@@ -11,6 +12,7 @@ public class Comic
         new Review() { Issue = 83, Critic = Enums.Critics.RottenTornadoes, Score = 89.4 },
         new Review() { Issue = 97, Critic = Enums.Critics.MuddyCritic, Score = 98.1 },
     ];
+
     public static readonly IEnumerable<Comic> comic = [
         new Comic { Name = "Johnny America vs. the Pinko", Issue = 6 },
         new Comic { Name = "Rock and Roll (limited edition)", Issue = 19 },
@@ -21,6 +23,7 @@ public class Comic
         new Comic { Name = "Tribal Tattoo Madness", Issue = 83 },
         new Comic { Name = "The Death of the Object", Issue = 97 },
     ];
+
     public static readonly IReadOnlyDictionary<int, decimal> Prices = new Dictionary<int, decimal>
     {
         { 6, 3600M },
@@ -32,5 +35,6 @@ public class Comic
         { 83, 25.75M },
         { 97, 35.25M },
     };
+
     public override string ToString() => $"{Name} (Issue #{Issue})";
 }

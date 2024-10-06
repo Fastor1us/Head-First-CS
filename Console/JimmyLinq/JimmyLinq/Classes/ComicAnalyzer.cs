@@ -8,6 +8,7 @@ public static class ComicAnalyzer
     {
         return prices[comic.Issue] < 100 ? PriceRange.Cheap : PriceRange.Expensive;
     }
+
     public static IEnumerable<IGrouping<PriceRange, Comic>> 
         GroupComicsByPrice(IEnumerable<Comic> comics, IReadOnlyDictionary<int, decimal> prices)
     {
@@ -17,6 +18,7 @@ public static class ComicAnalyzer
            group comic by CalculatePriceRange(comic, prices) into priceGroup
            select priceGroup;
     }
+
     public static IEnumerable<string> GetReviews(IEnumerable<Comic> comics, IEnumerable<Review> reviews)
     {
         return
